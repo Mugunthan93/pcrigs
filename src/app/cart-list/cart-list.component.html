@@ -1,0 +1,14 @@
+<app-cart-edit></app-cart-edit>
+<hr>
+<div class="row">
+  <div class="col-xs-10">
+    <ul class="list-group">
+      <a
+        class="list-group-item"
+        style="cursor: pointer"
+        *ngFor="let part of parts; let i = index">
+        {{part.name}} ({{part.amount}})
+      </a>
+    </ul>
+  </div>
+</div>
