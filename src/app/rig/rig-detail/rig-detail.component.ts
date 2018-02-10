@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Rig } from '../rig.model';
 
 @Component({
   selector: 'app-rig-detail',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rig-detail.component.css']
 })
 export class RigDetailComponent implements OnInit {
-
+  @Input()
+  rig: Rig;
   constructor() { }
 
   ngOnInit() {

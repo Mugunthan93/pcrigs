@@ -1,10 +1,12 @@
 <div class="row">
   <div class="col-md-12">
-    <img src="#" alt="" class="img-responsive" style="max-height: 300px">
+    <img [src]="rig.imagePath" alt="" 
+    class="img-responsive" 
+    style="max-height: 300px">
   </div>
 </div>
 <div class="row">
-  <div class="col-md-12"><h1>Rig Name</h1></div>
+  <div class="col-md-12"><h1>{{rig.name}}</h1></div>
 </div>
 <div class="row">
   <div class="col-xs-12">
@@ -25,7 +27,7 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    Rig Description
+    {{rig.description}}
   </div>
 </div>
 <div class="row">

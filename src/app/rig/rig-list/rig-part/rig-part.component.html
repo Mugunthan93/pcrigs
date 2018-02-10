@@ -1,3 +1,13 @@
-<p>
-  rig-part works!
-</p>
+<a href="#" class="list-group-item clearfix" (click) = "onRigSelected()">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{ rig.name }}</h4>
+    <p class="list-group-item-text">{{ rig.description }}</p>
+  </div>
+  <span class="pull-right">
+    <img [src] = "rig.imagePath" 
+    alt="{{ rig.name }}" 
+    class="img-responsive"
+    style="max-height: 50px;"
+    >
+  </span>
+</a>

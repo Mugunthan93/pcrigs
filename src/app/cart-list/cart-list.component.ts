@@ -14,10 +14,13 @@ export class CartListComponent implements OnInit {
     new Part('Asus Motherboard', 1),
     new Part('Cooling Fan', 4)
   ];
-
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addToPartList(part: Part) {
+    this.parts.push(part);
   }
 
 }

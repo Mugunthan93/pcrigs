@@ -1,9 +1,9 @@
-<app-header></app-header>
+<app-header [version] = "appVersion" (navigate)="onNavigateOnApp($event)"></app-header>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <app-rig></app-rig>
-            <app-cart-list></app-cart-list>
+            <app-rig *ngIf = "pageToShow === 'rigs'"></app-rig>
+            <app-cart-list *ngIf = "pageToShow === 'cart'"></app-cart-list>
         </div>
     </div>
 </div>

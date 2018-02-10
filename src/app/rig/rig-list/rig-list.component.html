@@ -6,21 +6,6 @@
 <hr>
 <div class="row">
   <div class="col-md-12">
-    <div>
-      <a href="#" class="list-group-item clearfix" *ngFor = "let rig of rigs">
-        <div class="pull-left">
-          <h4 class="list-group-item-heading">{{ rig.name }}</h4>
-          <p class="list-group-item-text">{{ rig.description }}</p>
-        </div>
-        <span class="pull-right">
-          <img [src] = "rig.imagePath" 
-          alt="{{ rig.name }}" 
-          class="img-responsive"
-          style="max-height: 50px;"
-          >
-        </span>
-      </a>
-    </div>
-    <!-- <app-rig-part></app-rig-part> -->
+    <app-rig-part  *ngFor = "let rig of rigs" [rig]="rig" (rigSelect)="onRigSelectedOnList(rig)"></app-rig-part>
   </div>
 </div>

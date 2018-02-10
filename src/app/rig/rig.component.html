@@ -1,8 +1,11 @@
 <div class="row">
   <div class="col-md-5">
-    <app-rig-list></app-rig-list>
+    <app-rig-list (rigSelected)="onRigSelectedOnApp($event)"></app-rig-list>
   </div>
   <div class="col-md-7">
-    <app-rig-detail></app-rig-detail>
+    <app-rig-detail *ngIf="selectedRig; else noRigSelected" [rig]="selectedRig"></app-rig-detail>
+    <ng-template #noRigSelected>
+      <p>No Rig Selected</p>
+    </ng-template>
   </div>
 </div>

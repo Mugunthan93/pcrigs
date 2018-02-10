@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Rig } from './rig.model';
 
 @Component({
   selector: 'app-rig',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rig.component.css']
 })
 export class RigComponent implements OnInit {
-
+  selectedRig: Rig;
   constructor() { }
 
   ngOnInit() {
   }
-
+  onRigSelectedOnApp(rig: Rig) {
+    this.selectedRig = rig;
+  }
 }
