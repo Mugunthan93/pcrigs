@@ -10,6 +10,9 @@ import { RigDetailComponent } from './rig/rig-detail/rig-detail.component';
 import { RigPartComponent } from './rig/rig-list/rig-part/rig-part.component';
 import { CartListComponent } from './cart-list/cart-list.component';
 import { CartEditComponent } from './cart-list/cart-edit/cart-edit.component';
+import { DropdownDirective } from './shared/dropdown.directive';
+import { LogComponent } from './services/log.component';
+import { CartService } from './shared/cart.service';
 
 
 @NgModule({
@@ -21,12 +24,14 @@ import { CartEditComponent } from './cart-list/cart-edit/cart-edit.component';
     RigDetailComponent,
     RigPartComponent,
     CartListComponent,
-    CartEditComponent
+    CartEditComponent,
+    DropdownDirective,
+    LogComponent,
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

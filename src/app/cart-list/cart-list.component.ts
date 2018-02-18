@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Part } from '../shared/part';
+import { CartService } from '../shared/cart.service';
 
 @Component({
   selector: 'app-cart-list',
@@ -8,19 +9,15 @@ import { Part } from '../shared/part';
 })
 export class CartListComponent implements OnInit {
 
-  parts = [
-    new Part('i7 6000K', 1),
-    new Part('DDL4 RAM 16GB', 2),
-    new Part('Asus Motherboard', 1),
-    new Part('Cooling Fan', 4)
-  ];
-  constructor() { }
+  parts = [];
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
-  }
-
-  addToPartList(part: Part) {
-    this.parts.push(part);
+    this.parts = this.cartService.getParts();
+    
+    this.cartService.newPartAdded.subscribe(() => {
+      this.parts = this.cartService.getParts();
+    });
   }
 
 }

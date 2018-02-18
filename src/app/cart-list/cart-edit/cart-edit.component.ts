@@ -1,5 +1,6 @@
-import { Component, OnInit, ElementRef, ViewChild, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild from '@angular/core';
 import { Part } from '../../shared/part';
+import { CartService } from '../../shared/cart.service';
 
 @Component({
   selector: 'app-cart-edit',
@@ -11,10 +12,7 @@ export class CartEditComponent implements OnInit {
   nameEl: ElementRef;
   @ViewChild('partAmount')
   amountEl: ElementRef;
-
-  @Output()
-  partAdded = new EventEmitter<Part>();
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
   }
@@ -23,6 +21,6 @@ export class CartEditComponent implements OnInit {
     const part =  new Part(
       this.nameEl.nativeElement.value,
       this.amountEl.nativeElement.value);
-      this.partAdded.emit(part);
+      this.cartService.addPart(part);
   }
 }

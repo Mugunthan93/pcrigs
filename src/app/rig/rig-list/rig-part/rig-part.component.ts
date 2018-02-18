@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Rig } from '../../rig.model';
+import { RigService } from '../../rig.service';
 
 @Component({
   selector: 'app-rig-part',
@@ -9,15 +10,14 @@ import { Rig } from '../../rig.model';
 export class RigPartComponent implements OnInit {
   @Input()
   rig: Rig;
-  @Output()
-  rigSelect = new EventEmitter<void>();
-  constructor() { }
+
+  constructor(private rigService: RigService) { }
 
   ngOnInit() {
   }
 
   onRigSelected() {
-    this.rigSelect.emit();
+    this.rigService.rigSelected.emit(this.rig);
   }
 
 }
